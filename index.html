@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-HUB | Attendance app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <img src="logo/A-HUB 56 x 56 PX.png" alt="A-hub logo">
+            <button class="admin-login-btn"><span>ADMIN LOGIN</span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="nav">
+            <div class="month">
+                <span>MAY</span>
+            </div>
+            <div class="filter">
+                <select name="filter" id="filter">
+                    <option value="" selected disabled>Filter</option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="days">
+            <div class="card active">
+                <div class="info">
+                    <div class="day">Monday</div>
+                    <div class="date">24/02/2025</div>
+                </div>
+
+                <i class="fa fa-angle-right"></i>
+            </div>
+            
+            <div class="card">
+                <div class="info">
+                    <div class="day">Tuesday</div>
+                    <div class="date">24/02/2025</div>
+                </div>
+                <i class="fa fa-angle-right"></i>
+            </div>
+            
+            <div class="card">
+                <div class="info">
+                    <div class="day">Wednesday</div>
+                    <div class="date">24/02/2025</div>
+                </div>
+                <i class="fa fa-angle-right"></i>
+            </div>
+            
+            <div class="card">
+                <div class="info">
+                    <div class="day">Thursday</div>
+                    <div class="date">24/02/2025</div>
+                </div>
+                <i class="fa fa-angle-right"></i>
+            </div>
+            
+            <div class="card">
+                <div class="info">
+                    <div class="day">Friday</div>
+                    <div class="date">24/02/2025</div>
+                </div>
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </section>
+    </main>
+
+    <section class="attendance">
+        <div class="container">
+            <div class="top">
+                <h3>ATTENDANCE</h3>
+                <button class="close"><span>close</span></button>
+            </div>
+
+            <div class="info">
+                <div class="day">Monday</div>
+                <div class="date">24/02/2025</div>
+            </div>
+            
+            <div class="content">
+                <div class="headings">
+                    <p>Name</p>
+                    <p>Program</p>
+                    <p>Status</p>
+                </div>
+
+                <div class="details">
+                    <div class="user-details">
+                        <p>Nathan Sunday</p>
+                        <p>Industrial Training</p>
+                        <span class="status">Present</span>
+                    </div>
+                    
+                    <div class="user-details">
+                        <p>Jacob Peter</p>
+                        <p>Industrial Training</p>
+                        <span class="status">Present</span>
+                    </div>
+                    
+                    <div class="user-details">
+                        <p>Alex Gabriel</p>
+                        <p>Industrial Training</p>
+                        <span class="status">Present</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer>
+        <div class="wrapper">
+            <p>A-HUB TECHNOLOGIES &copy; 2025. All rights reserved</p>
+        </div>
+    </footer> -->
+</body>
+</html>

@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    background-color: #ddd;
+    color: #222;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+}
+
+header {
+    background-color: #fff;
+}
+
+.header-inner {
+    margin: 0 auto;
+    padding: 0 10px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1024px;
+}
+
+button.admin-login-btn {
+    padding: 12px;
+    color: #fff;
+    background-color: #673cc2;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+main {
+    margin: 20px auto;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1024px;
+    background-color: #eee;
+    border-radius: 6px;
+}
+
+section.nav {
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .nav .month {
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+main .nav select {
+    width: 80px;
+    padding: 8px 0;
+}
+
+main section.days {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+main section .card {
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+section .active {
+    background-color: #673cc2 !important;
+    color: #fff;
+}
+
+.card:hover {
+    transform: scale(0.99);
+}
+
+section .card .day {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+section.attendance {
+    position: fixed;
+    inset: 0;
+    background-color: #eee;
+    padding: 20px;
+}
+
+section.attendance .container {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+section.attendance .top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.attendance button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+section.attendance .close {
+    border: 1px #222 solid;
+    background: none;
+    border-radius: 15px;
+    color: inherit;
+}
+
+.top {
+    margin: 0 0 40px;
+}
+
+section.attendance .content {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff;
+}
+
+section.attendance .headings {
+    margin-bottom: 15px;
+    padding: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    background-color: #673cc2;
+    color: #fff;
+}
+
+section.attendance .headings, .user-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    gap: 10px;
+}
+
+.user-details {
+    margin-bottom: 5px;
+    padding: 0 10px;
+    align-items: center;
+    font-size: 0.87em;
+}
+
+.user-details .status {
+    padding: 5px;
+    color: #fff;
+    background-color: #28b05c8c;
+}
+
+/* footer {
+    background-color: #222;
+}
+
+footer .wrapper {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1024px;
+    color: #fff;
+} */
