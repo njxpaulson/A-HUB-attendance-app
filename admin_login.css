@@ -1,0 +1,74 @@
+*{
+margin:0%;
+ padding:0%;
+}
+body{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    background-color: #7406bec1;
+    color: #222;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+}
+.container{
+    background-color: lightsalmon;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) ;
+    position: absolute;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-sizing: 10px;
+    top: 50%;
+    left: 50%;
+}
+.sign-in h1 {
+    margin: 0 0 30px;
+    padding:0;
+    color: #222;
+    text-align: center;
+}
+.container .sign-in .user-box {
+    position: relative;
+}
+.container .sign-in .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #222;
+    outline: none;
+    background: transparent;
+}
+.container .sign-in .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #222;
+    pointer-events: none;
+    transition: .5s;
+}
+.container .forgot_pass {
+    font-size: 12px;
+    color: #000;
+    float: right;
+}
+.container .btn_submit button{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: darkorange;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+    margin-top: 20px;
+    letter-spacing: 4px;
+}
