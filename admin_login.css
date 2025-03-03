@@ -59,7 +59,7 @@ body{
     color: #000;
     float: right;
 }
-.container .btn_submit button{
+.container form button{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
