@@ -29,6 +29,7 @@ main {
 table {
     width: 100%;
     background-color: #fff;
+    margin-bottom: 30px;
 }
 
 table thead {
@@ -56,6 +57,16 @@ table .mark-absent-btn {
 table .delete-user-btn {
     background: none;
     color: #e83428;
+}
+
+.nav-home {
+    text-decoration: none;
+}
+
+.nav-home button {
+    padding: 12px 20px;
+    color: #000;
+    background-color: #ccc;
 }
 
 .mask {
