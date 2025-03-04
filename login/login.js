@@ -4,18 +4,22 @@ import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9
 // synchronous
 // asynchronous
 
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+const loginForm = document.getElementById('loginForm');
 
-  try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    localStorage.setItem('isLoggedIn', 'true');
-    window.location.href = 'dashboard.html'; // Redirect to dashboard
-    console.log("welcome admin");
-  } catch (error) {
-    document.getElementById('error').textContent = 'wrong login credentials';
-  };
-});
+if (loginForm) {
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+  
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem('isLoggedIn', 'true');
+      window.location.href = '../dashboard/dashboard.html'; // Redirect to dashboard
+      console.log("welcome admin");
+    } catch (error) {
+      document.getElementById('error').textContent = 'wrong login credentials';
+    };
+  });
+}

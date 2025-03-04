@@ -1,7 +1,23 @@
-import { db } from './app.js';
+import { db } from '../app.js';
 import { collection, addDoc, getDocs, doc, deleteDoc, updateDoc, where, query } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 // Add User Form
+function toggleAddUserForm() {
+  const addUserSection = document.querySelector('.add-user-form');
+  const isVisible = addUserSection.classList.toggle('visible');
+  const mask = document.querySelector('.mask');
+
+  if (isVisible) {
+    mask.style.display = 'block';
+  } else {
+    mask.style.display = 'none';
+  }
+}
+
+document.querySelectorAll('#add-user, #cancel').forEach(button => {
+  button.addEventListener('click', toggleAddUserForm);
+})
+
 document.getElementById('addUserForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -9,7 +25,7 @@ document.getElementById('addUserForm').addEventListener('submit', async (e) => {
   const program = document.getElementById('program').value;
 
   const querySnapshot = await getDocs(collection(db, "users"));
-  const existingUser = querySnapshot.docs.find((doc) => doc.data().name === name);
+  const existingUser = querySnapshot.docs.find((doc) => doc.data().name === name && doc.data().program === program);
 
   if (existingUser) {
     alert("User already exists!");
@@ -20,6 +36,7 @@ document.getElementById('addUserForm').addEventListener('submit', async (e) => {
     await addDoc(collection(db, 'users'), { name, program });
     renderUsers();
     e.target.reset();
+    toggleAddUserForm();
   } catch (error) {
     console.error('Error adding user:', error);
   } 
@@ -45,6 +62,7 @@ const renderUsers = async () => {
     usersQuerySnapshot.forEach((doc) => {
         const user = doc.data();
         const row = document.createElement("tr");
+        // const row = document.querySelector('.user-details');
         const userId = doc.id;
         const attendanceStatus = attendanceMap[userId] || 'Not Marked';
     
@@ -54,11 +72,15 @@ const renderUsers = async () => {
           <td>
             <button class="mark-present-btn" data-user-id="${doc.id}">${attendanceStatus === 'Present' ? 'Present' : 'Mark Present'}</button>
             <button class="mark-absent-btn" data-user-id="${doc.id}">${attendanceStatus === 'Absent' ? 'Absent' : 'Mark Absent'}</button>
-            <p>${attendanceStatus}</p>
-            <button class="delete-user-btn" data-user-id="${doc.id}">Delete</button>
+          </td>
+          <td>
+            <p>${attendanceStatus}</p>            
+          </td>
+          <td>
+            <button class="delete-user-btn" data-user-id="${doc.id}">DELETE</button>
           </td>
         `;
-    
+
         const presentButton = row.querySelector(".mark-present-btn");
         presentButton.addEventListener("click", () => markAttendance(doc.id, "Present"));
         const absentButton = row.querySelector(".mark-absent-btn");

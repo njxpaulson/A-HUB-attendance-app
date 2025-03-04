@@ -1,0 +1,137 @@
+main {
+    margin: 50px auto;
+    max-width: 1024px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading span {
+    color: #673cc2;
+}
+
+.top-bar{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    background-color: #fff;
+}
+
+table thead {
+    text-align: left;
+    background-color: #673cc2;
+    color: #fff;
+}
+
+table th, table td {
+    padding: 15px;
+}
+
+table .mark-present-btn {
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #1ac625;
+}
+
+table .mark-absent-btn {
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #e83428;
+}
+
+table .delete-user-btn {
+    background: none;
+    color: #e83428;
+}
+
+.mask {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: #dddddd96;
+    backdrop-filter: blur(15px);
+}
+
+section.add-user-form {
+    visibility: hidden;
+    transform: scale(0);
+    opacity: 0;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 6px 16px #aaa;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    transition: 0.2s ease;
+    z-index: 100;
+}
+
+section.add-user-form.visible {
+    visibility: visible;
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+}
+
+section.add-user-form h6 {
+    font-size: 1em;
+    margin: 25px 0;
+}
+
+#addUserForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#addUserForm input {
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+#addUserForm .buttons {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#addUserForm button, #addUserForm span {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 2px;
+}
+
+#addUserForm .submit {
+    background-color: #673cc2;
+    color: #fff;
+}
+
+#addUserForm .cancel {
+    text-align: center;
+    background-color: #ddd;
+    color: #e83428;
+}
