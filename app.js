@@ -4,12 +4,12 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDEoiT1MV0ZWdx1nVFOxTuM2Z4FNzsgvvM",
-  authDomain: "a-hub-attendance-app.firebaseapp.com",
-  projectId: "a-hub-attendance-app",
-  storageBucket: "a-hub-attendance-app.firebasestorage.app",
-  messagingSenderId: "324217019319",
-  appId: "1:324217019319:web:0d4d7b3f7a8de0afaba632",
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
