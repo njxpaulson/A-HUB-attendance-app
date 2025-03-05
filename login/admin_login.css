@@ -1,5 +1,9 @@
+button {
+    cursor: pointer;
+}
+
 .container{
-    background-color: lightsalmon;
+    background-color: orange;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) ;
     position: absolute;
@@ -11,7 +15,7 @@
     left: 50%;
 }
 .sign-in h1 {
-    margin: 0 0 30px;
+    margin: 50px 0;
     padding:0;
     color: #222;
     text-align: center;
@@ -23,13 +27,29 @@
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #222;
+    color: #444;
     margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #222;
     outline: none;
     background: transparent;
+    transition: .2s ease;
 }
+
+.user-box input::placeholder {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+form input:focus ~ label,
+.user-box input:not(:placeholder-shown) ~ label {
+    opacity: 0;
+}
+
+.user-box input:focus::placeholder {
+    opacity: 1;
+}
+
 .container .sign-in .user-box label {
     position: absolute;
     top: 0;
@@ -40,11 +60,7 @@
     pointer-events: none;
     transition: .5s;
 }
-.container .forgot_pass {
-    font-size: 12px;
-    color: #000;
-    float: right;
-}
+
 .container form .buttons {
     margin-top: 20px;
     display: flex;
@@ -69,7 +85,7 @@
     display: inline-block;
     color: darkorange;
     font-size: 13px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;

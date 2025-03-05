@@ -15,9 +15,10 @@ body {
     font-size: 1em;
     background-color: #ddd;
     color: #222;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
 }
 
 header {
@@ -40,6 +41,16 @@ h1{
     margin-bottom: 10px;
     display: block;
     text-align: center;
+}
+
+h1 span.a {
+    color: #673cc2;
+    font-weight: bolder;
+}
+
+h1 span.hub {
+    color: #ff8c00;
+    font-weight: bolder;
 }
 
 button.admin-login-btn {
@@ -81,15 +92,15 @@ main .nav select {
     padding: 8px 0;
 }
 
-main section.days {
+main .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
 
 main section .card {
-    padding: 20px;
     background-color: #fff;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,7 +109,7 @@ main section .card {
     cursor: pointer;
 }
 
-section .active {
+.card.active {
     background-color: #673cc2 !important;
     color: #fff;
 }
@@ -155,41 +166,24 @@ section.attendance .close {
     margin: 0 0 40px;
 }
 
-section.attendance .content {
-    margin: 20px 0;
-    padding: 15px;
+table {
+    width: 100%;
     background-color: #fff;
+    margin-bottom: 30px;
 }
 
-section.attendance .headings {
-    margin-bottom: 15px;
-    padding: 15px;
-    letter-spacing: 2px;
-    font-weight: 600;
+table thead {
+    text-align: left;
     background-color: #673cc2;
     color: #fff;
 }
 
-section.attendance .headings, .user-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr 0.5fr;
-    gap: 10px;
-}
-
-.user-details {
-    margin-bottom: 5px;
-    padding: 0 10px;
-    align-items: center;
-    font-size: 0.87em;
-}
-
-.user-details .status {
-    padding: 5px;
-    color: #fff;
-    background-color: #28b05c8c;
+table th, table td {
+    padding: 15px;
 }
 
 .attendance .info {
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -198,8 +192,8 @@ section.attendance .headings, .user-details {
 .info .contact-btn button {
     padding: 14px;
     color: #fff;
-    background-color: #673cc2;
-    border-radius: 8px;
+    background-color: #222;
+    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -210,6 +204,20 @@ section.attendance .headings, .user-details {
 
 .info h4 {
     font-size: 1.5em;
+}
+
+td.status-present {
+    background-color: #21cd2f;
+    color: #fff;
+}
+
+td.status-absent {
+    background-color: #e92727;
+    color: #fff;
+}
+
+td.status-not-marked {
+    background-color: #ddd;
 }
 
 /* footer {

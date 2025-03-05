@@ -11,18 +11,17 @@
     <header>
         <div class="header-inner">
             <img src="logo/A-HUB 56 x 56 PX.png" alt="A-hub logo">
-            <a class="logInLink"><button class="admin-login-btn"></button></a>
+            <a class="logInLink"><button class="admin-login-btn">ADMIN LOGIN&nbsp;&nbsp;<i class="fa-solid fa-user"></i></button></a>
         </div>
     </header>
 
     <main>
         <div class="welcome">
-            <h1>Welcome To Ahub Tech</h1>
+            <h1>Welcome To <span class="a">A-</span><span class="hub">HUB</span> Tech</h1>
         </div>
         <section class="nav">
-            <div class="month">
-                <span>MAY</span>
-            </div>
+            <div class="month"></div>
+
             <div class="filter">
                 <select name="filter" id="filter">
                     <option value="" selected disabled>Filter</option>
@@ -43,45 +42,8 @@
         </section>
 
         <section class="days">
-            <div class="card active">
-                <div class="info">
-                    <div class="day">Monday</div>
-                    <div class="date">24/02/2025</div>
-                </div>
-
-                <i class="fa fa-angle-right"></i>
-            </div>
-            
-            <div class="card">
-                <div class="info">
-                    <div class="day">Tuesday</div>
-                    <div class="date">24/02/2025</div>
-                </div>
-                <i class="fa fa-angle-right"></i>
-            </div>
-            
-            <div class="card">
-                <div class="info">
-                    <div class="day">Wednesday</div>
-                    <div class="date">24/02/2025</div>
-                </div>
-                <i class="fa fa-angle-right"></i>
-            </div>
-            
-            <div class="card">
-                <div class="info">
-                    <div class="day">Thursday</div>
-                    <div class="date">24/02/2025</div>
-                </div>
-                <i class="fa fa-angle-right"></i>
-            </div>
-            
-            <div class="card">
-                <div class="info">
-                    <div class="day">Friday</div>
-                    <div class="date">24/02/2025</div>
-                </div>
-                <i class="fa fa-angle-right"></i>
+            <div class="card-container" id="cardContainer">
+                <!-- Cards will be dynamically inserted here -->
             </div>
         </section>
     </main>
@@ -94,11 +56,11 @@
             </div>
 
             <div class="info">
-                <h4>TODAY</h4>
+                <h4 class="present-month"></h4>
                 
                 <div class="date-container">
-                    <div class="day">Monday</div>
-                    <div class="date">24/02/2025</div>
+                    <div class="present-day"></div>
+                    <div class="present-date"></div>
                 </div>
                 
                 <div class="contact-btn">
@@ -106,33 +68,18 @@
                 </div>
             </div>
             
-            <div class="content">
-                <div class="headings">
-                    <p>Name</p>
-                    <p>Program</p>
-                    <p>Status</p>
-                </div>
-
-                <div class="details">
-                    <div class="user-details">
-                        <p>Nathan Sunday</p>
-                        <p>Industrial Training</p>
-                        <span class="status">Present</span>
-                    </div>
-                    
-                    <div class="user-details">
-                        <p>Jacob Peter</p>
-                        <p>Industrial Training</p>
-                        <span class="status">Present</span>
-                    </div>
-                    
-                    <div class="user-details">
-                        <p>Alex Gabriel</p>
-                        <p>Industrial Training</p>
-                        <span class="status">Present</span>
-                    </div>
-                </div>
-            </div>
+            <table id="usersTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Program</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+    
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -142,7 +89,7 @@
         </div>
     </footer> -->     
 
-    <script type="module" src="script.js"></script>
     <script type="module" src="./app.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>

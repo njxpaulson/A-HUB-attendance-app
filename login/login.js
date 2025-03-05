@@ -1,5 +1,6 @@
-import { auth } from '../app.js';
+import { auth, db } from '../app.js';
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
+import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 // synchronous
 // asynchronous
@@ -13,13 +14,27 @@ if (loginForm) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
   
+
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      localStorage.setItem('isLoggedIn', 'true');
-      window.location.href = '../dashboard/dashboard.html'; // Redirect to dashboard
-      console.log("welcome admin");
+    
+      // Update session data in Firestore
+      const sessionData = {
+        adminId: userCredential.user.uid,
+        isLoggedIn: true,
+        isAdmin: true,
+      };
+    
+      await setDoc(doc(db, 'admin-sessions', userCredential.user.uid), sessionData).then(() => {
+        window.location.href = '../dashboard/dashboard.html'; // Redirect to dashboard
+      });    
     } catch (error) {
-      document.getElementById('error').textContent = 'wrong login credentials';
-    };
+      if (error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
+        document.getElementById('error').textContent = 'wrong login credentials';
+      } else {
+        document.getElementById('error').textContent = 'Error logging in';
+        console.error('Error logging in:', error);
+      }
+    };       
   });
 }

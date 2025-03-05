@@ -1,15 +1,21 @@
+button {
+    cursor: pointer;
+}
+
 main {
     margin: 50px auto;
     max-width: 1024px;
 }
 
 .heading {
+    font-size: 2em;
     text-align: center;
     margin-bottom: 30px;
 }
 
 .heading span {
     color: #673cc2;
+    font-weight: bolder;
 }
 
 .top-bar{
@@ -24,6 +30,27 @@ main {
     background-color: #ff8c00;
     color: #fff;
     border-radius: 5px;
+}
+
+.date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-wrapper hr {
+    width: 3px;
+    height: 35px;
+    background-color: #000;
+}
+
+.date-wrapper .month {
+    text-transform: uppercase;
+    font-size: 2.8em;
+}
+
+.date-container {
+    line-height: 20px;
 }
 
 table {
@@ -63,10 +90,18 @@ table .delete-user-btn {
     text-decoration: none;
 }
 
-.nav-home button {
+.actions button {
     padding: 12px 20px;
     color: #000;
+}
+
+.actions .nav-home button {
     background-color: #ccc;
+}
+
+.actions .log-out-btn {
+    color: #fff;
+    background-color: #e83428;
 }
 
 .mask {
