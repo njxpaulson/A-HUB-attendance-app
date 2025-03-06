@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Attendance app</title>
+    <link rel="icon" type="image/x-icon" href="../logo/A-HUB 56 x 56 PX.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+    <main>
+        <div class="heading">
+            <h2>Welcome <span>Admin</span></h2>
+        </div>
+        
+
+        <div class="top-bar">
+            <div class="date-wrapper">                
+                <h4 class="month">JANUARY</h4>
+
+                <hr>
+
+                <div class="date-container">
+                    <h4 class="day"></h4>
+                    <div class="date"></div>
+                </div>
+            </div>
+
+            <button id="add-user" class="add-user">ADD USER&nbsp;&nbsp;<i class="fa-solid fa-user"></i></button>
+        </div>
+
+        <table id="usersTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Program</th>
+                <th>Mark Attendance</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+
+        <div class="actions">
+            <a class="nav-home" href="../index.html"><button>BACK HOME&nbsp;&nbsp;<i class="fa-solid fa-home"></i></button></a>
+            <button class="log-out-btn">LOG OUT&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-right-from-bracket"></i></button>
+        </div>
+
+        <section class="add-user-form">
+            <h6>ADD A USER</h6>
+            <form id="addUserForm">
+                <input id="name" type="text" placeholder="Full Name" required>
+                <input id="program" type="text" placeholder="Program" required>
+                <div class="buttons">
+                    <button class="submit" type="submit">ADD USER</button>
+                    <span id="cancel" class="cancel">Cancel</span>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div class="mask"></div>
+
+    <script type="module" src="./dashboard.js"></script>
+</body>
+</html>
