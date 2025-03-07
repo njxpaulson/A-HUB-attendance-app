@@ -25,12 +25,10 @@ async function handleDashboardNav() {
       // User is an admin
       adminLogInBtn.innerHTML = `ADMIN DASHBOARD&nbsp;&nbsp;<i class="fa-solid fa-grip"></i>`;
       adminLogInLink.setAttribute('href', './dashboard/dashboard.html');
-      console.log('user is an admin');
     } else {
       // User is not an admin
       adminLogInBtn.innerHTML = `ADMIN LOGIN&nbsp;&nbsp;<i class="fa-solid fa-user"></i>`;
       adminLogInLink.setAttribute('href', './login/admin_login.html');
-      console.log('user is not an admin');
     }
   } catch (error) {
     console.error('Error checking admin status:', error);

@@ -12,7 +12,6 @@ exports.checkIfAdmin = async (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
 
   if (!token) {
-    console.log('No token provided');
     return res.status(401).json({ success: false, message: 'No token provided' });
   }
 
@@ -21,21 +20,16 @@ exports.checkIfAdmin = async (req, res) => {
     const decodedToken = await admin.auth().verifyIdToken(token);
     const uid = decodedToken.uid;
 
-    console.log('Checking admin status for UID:', uid);
-
     // Check if the user is an admin in Firestore
     const adminSessionRef = db.collection('admin-sessions').doc(uid);
     const adminSessionSnap = await adminSessionRef.get();
 
     if (!adminSessionSnap.exists || !adminSessionSnap.data().isAdmin) {
-      console.log('User is not an admin or session does not exist');
       return res.status(403).json({ success: false, message: 'Unauthorized' });
     }
 
-    console.log('User is an admin');
     res.json({ success: true, message: 'User is an admin' });
   } catch (error) {
-    console.error('Error checking admin status:', error);
     res.status(500).json({ success: false, message: 'Error checking admin status', error });
   }
 };
