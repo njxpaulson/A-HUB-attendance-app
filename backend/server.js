@@ -10,7 +10,7 @@ const app = express();
 // CORS configuration
 app.use(
   cors({
-    origin: 'http://127.0.0.1:5500', // Replace with your frontend origin
+    origin: ['http://127.0.0.1:5500', 'https://a-hub-attendance-app.vercel.app'], // Replace with your frontend origin
     credentials: true, // Allow credentials (cookies)
   })
 );
